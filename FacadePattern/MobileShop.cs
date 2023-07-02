@@ -2,24 +2,26 @@
 {
     public class MobileShop
     {
-        private IIPhone _iphoneSection;
-        private IAndriod iAndroidSection;
+        private readonly IIPhone _iphone;
+        private readonly IAndroid iAndroid;
 
         public MobileShop()
         {
-            _iphoneSection = new IPhone();
-            iAndroidSection = new Android();
+            _iphone = new IPhone();
+            iAndroid = new Android();
         }
 
-        public void IPhoneSection() => Console.WriteLine(_iphoneSection.GetIphones());
+        public string GetIPhone(string model, int quantity, int price) => _iphone.GetIPhone(model, quantity, price);
 
-        public void AndroidSection() => Console.WriteLine(iAndroidSection.GetAndroids());
+        public string GetAndroid(string model, int quantity, int price) => iAndroid.GetAndroid(model, quantity, price);
 
         static void Main()
         {
             var shopKeeper = new MobileShop();
-            shopKeeper.AndroidSection();
-            shopKeeper.IPhoneSection();
+            var iphoneDetail = shopKeeper.GetIPhone("iPhone X", 1, 999);
+            var androidDetail = shopKeeper.GetAndroid("Samsung Galaxy S20", 1, 799);
+            Console.WriteLine(iphoneDetail);
+            Console.WriteLine(androidDetail);
         }
     }
 }
