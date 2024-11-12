@@ -6,7 +6,7 @@
     <RootNamespace>Design_Patterns</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>Design_Patterns.FacadePattern.MobileShop</StartupObject>
+    <StartupObject>FactoryPattern.Program</StartupObject>
   </PropertyGroup>
 
 </Project>
